@@ -1,0 +1,27 @@
+<form name="calcForm" class="row">
+  <div class="small-5 columns">
+    
+    <p class="lead">
+      Current grade:
+      <br/>
+      <strong class="stat">
+        {{ $ctrl.currentGrade || 0 }}%
+      </strong>
+    </p>
+  </div>
+  <div class="small-7 columns">
+    
+    <p class="lead">
+      Adjusted grade:
+      <br/>
+      <strong class="stat">
+        {{ $ctrl.adjustedGrade || 0 }}%
+      </strong>
+      <br/>
+      <strong class="stat">
+	      <gpa-field ng-model="$ctrl.adjustedGrade"></gpa-field>
+      </strong>
+    </p>
+
+  </div>
+</form>

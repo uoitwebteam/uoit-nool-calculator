@@ -1,0 +1,17 @@
+<div class="column flex-child-shrink">
+	<style type="text/css">
+		grade-calculator .form-error {
+			display: block;
+		}
+	</style>
+	<div class="callout">
+		<h2>Assignments:</h2>
+		<p><strong>Add assignment grades and their weight values below</strong> to determine your total adjusted grade and GPA.</p>
+		<grade-form on-grade-change="$ctrl.gradeChange($event)"></grade-form>
+
+		<div class="callout tertiary" style="margin: 1rem -1rem -1rem; border: 0;">
+			<h2>Grades:</h2>
+			<grade-display grades="$ctrl.grades"></grade-display>
+		</div>
+	</div>
+</div>

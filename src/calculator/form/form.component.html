@@ -1,0 +1,83 @@
+<ul class="no-bullet">
+  <li ng-repeat="grade in $ctrl.grades">
+    <ng-form name="gradeForm" class="row align-bottom">
+      <div class="xxsmall-5 columns">
+      
+        <label>Mark
+          <div class="input-group">
+            <input 
+              name="mark"
+              class="input-group-field text-right"
+              ng-model="grade.mark"
+              ng-change="$ctrl.updateGrades()"
+              type="number"
+              max="105"
+              min="0"
+              autofocus />
+            <span class="input-group-label">% <sup style="color:#3ADB76" ng-show="grade.mark > 100">++</sup></span>
+          </div>
+          <span class="form-error" ng-if="gradeForm.mark.$invalid">Maximum exceeded!</span>
+        </label>
+        
+      </div>
+      <div class="xxsmall-5 columns">
+      
+        <label>Value
+          <div class="input-group">
+            <input name="value" 
+                   class="input-group-field text-right" 
+                   type="number" 
+                   ng-model="grade.value" 
+                   ng-change="$ctrl.updateGrades()" 
+                   max="{{$ctrl.valueRemaining + grade.value}}" 
+                   min="0" />
+            <span class="input-group-label">%</span>
+          </div>
+          <span class="form-error" ng-if="gradeForm.value.$invalid">Maximum exceeded!</span>
+        </label>
+        
+      </div>
+      <div class="xxsmall-2 columns">
+      
+        <button ng-click="$ctrl.remove($index)"
+                class="button small expanded alert hollow"
+                style="margin-bottom:1rem;">
+          <span class="show-for-sr">Remove</span>
+          <span class="icon_cancel" aria-hidden="true"></span>
+        </button>
+        
+      </div>
+    </ng-form>
+  </li>
+  
+  <li class="flex-container align-justify align-middle">
+  
+    <button class="button hollow small"
+            ng-click="$ctrl.add()"
+            style="margin:0;">
+      + Add new assignment
+    </button>
+    
+    <div style="margin-left: 2rem;">
+      <span class="label tertiary"
+            ng-class="{
+              warning: $ctrl.valueRemaining < 21,
+              emergency: !$ctrl.valueRemaining
+            }">
+        Weight value remaining: <strong>{{ $ctrl.valueRemaining }}%</strong>
+      </span>
+    </div>
+  </li>
+  
+  <li>
+    <span ng-if="!$ctrl.goal">
+      <hr/>
+      <button class="button expanded" ng-click="$ctrl.addGoal()">+ Add new goal</button>
+    </span>
+    <span ng-if="$ctrl.goal && $ctrl.valueRemaining > 0">
+      <br/>
+      <grade-goal grades="$ctrl.grades" value-remaining="$ctrl.valueRemaining"></grade-goal>
+    </span>
+  </li>
+  
+</ul>

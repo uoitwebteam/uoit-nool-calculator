@@ -1,0 +1,32 @@
+<div class="callout primary">
+
+  <ng-form name="goalForm" class="row align-middle">
+    <div class="xxsmall-3 columns">
+      <label>To achieve a grade average of:
+        <div class="input-group">
+          <input 
+            name="mark"
+            class="input-group-field text-right"
+            ng-model="$ctrl.goal"
+            type="number"
+            max="100"
+            min="0"
+            autofocus />
+          <span class="input-group-label">%</span>
+        </div>
+        <span class="form-error" ng-if="goalForm.mark.$invalid">Maximum exceeded!</span>
+      </label>
+    </div>
+    <div class="xxsmall-3 columns">
+      <label>...or a GPA of:
+        <gpa-field ng-model="$ctrl.goal" name="gpa" editable="true"></gpa-field>
+        <span class="form-error" ng-if="goalForm.gpa.$invalid">Maximum exceeded!</span>
+      </label>
+    </div>
+
+    <div class="xxsmall-6 columns">
+      <p class="lead">... You would need to achieve at least <strong><span class="stat">{{ $ctrl.percentNeeded }}%</span> on the remaining {{ $ctrl.valueRemaining }}% of your assignment weight</strong> to achieve a <strong>final grade of {{ $ctrl.goal }}% or <gpa-field ng-model="$ctrl.goal"></gpa-field>.</strong></p>
+    </div>
+  </ng-form>
+
+</div>
