@@ -72,11 +72,12 @@
   <li>
     <span ng-if="!$ctrl.goal">
       <hr/>
-      <button class="button expanded" ng-click="$ctrl.addGoal()">+ Add new goal</button>
+      <button class="button expanded" ng-click="$ctrl.toggleGoal()">+ Add new goal</button>
     </span>
     <span ng-if="$ctrl.goal && $ctrl.valueRemaining > 0">
       <br/>
       <grade-goal grades="$ctrl.grades" value-remaining="$ctrl.valueRemaining"></grade-goal>
+      <a ng-click="$ctrl.toggleGoal()">^ Hide goal entry</a>
     </span>
   </li>
   

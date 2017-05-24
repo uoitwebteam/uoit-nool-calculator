@@ -5,7 +5,7 @@ import template from './form.component.html';
 const controller = class FormController {
   constructor() {
     this.grades = [];
-    this.goal = null;
+    this.goal = false;
   }
 
   add(mark = 0, value = 0) {
@@ -27,12 +27,8 @@ const controller = class FormController {
     });
   }
 
-  addGoal() {
-    this.goal = {
-      avg: 0,
-      gpa: 0,
-      needed: 0
-    };
+  toggleGoal() {
+    this.goal = !this.goal;
   }
 
   get valueRemaining() {
