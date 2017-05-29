@@ -16,13 +16,13 @@
               autofocus />
             <span class="input-group-label">% <sup style="color:#3ADB76" ng-show="grade.mark > 100">++</sup></span>
           </div>
-          <span class="form-error" ng-if="gradeForm.mark.$invalid">Maximum exceeded!</span>
+          <span class="form-error" ng-if="gradeForm.mark.$invalid">Invalid mark value!</span>
         </label>
         
       </div>
       <div class="xxsmall-5 columns">
       
-        <label>Value
+        <label>Weight value
           <div class="input-group">
             <input name="value" 
                    class="input-group-field text-right" 
@@ -33,7 +33,7 @@
                    min="0" />
             <span class="input-group-label">%</span>
           </div>
-          <span class="form-error" ng-if="gradeForm.value.$invalid">Maximum exceeded!</span>
+          <span class="form-error" ng-if="gradeForm.value.$invalid">Invalid weight value!</span>
         </label>
         
       </div>

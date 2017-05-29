@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import { RoundFilter } from './calculator/round.filter';
+import { RoundFilter } from './calculator/common/round.filter';
 import { GpaField } from './calculator/gpa/gpa.component';
 import { GradeForm } from './calculator/form/form.component';
 import { GradeGoal } from './calculator/goal/goal.component';

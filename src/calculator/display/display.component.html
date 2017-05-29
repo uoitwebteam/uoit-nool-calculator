@@ -2,7 +2,8 @@
   <div class="small-5 columns">
     
     <p class="lead">
-      Current grade:
+      Current grade
+      <small>(total average)</small>:
       <br/>
       <strong class="stat">
         {{ $ctrl.currentGrade || 0 }}%
@@ -12,7 +13,8 @@
   <div class="small-7 columns">
     
     <p class="lead">
-      Adjusted grade:
+      Adjusted grade 
+      <small>(weight applied)</small>:
       <br/>
       <strong class="stat">
         {{ $ctrl.adjustedGrade || 0 }}%
