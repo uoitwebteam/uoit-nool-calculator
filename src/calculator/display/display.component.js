@@ -2,6 +2,7 @@ import template from './display.component.html';
 
 const controller = class DisplayController {
   constructor(roundFilter) {
+    'ngInject';
     this.round = roundFilter;
   }
 

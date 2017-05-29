@@ -2,6 +2,7 @@ import template from './gpa.component.html';
 
 const controller = class GpaController {
   constructor(roundFilter) {
+    'ngInject';
     this.round = roundFilter;
   }
   $onInit() {
