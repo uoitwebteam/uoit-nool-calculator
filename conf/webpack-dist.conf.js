@@ -59,7 +59,7 @@ module.exports = {
       compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
     }),
     new ExtractTextPlugin('index-[contenthash].css'),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'angular.js'}),
+    // new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'angular.js'}),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: () => [autoprefixer]
@@ -68,10 +68,10 @@ module.exports = {
   ],
   output: {
     path: path.join(process.cwd(), conf.paths.dist),
-    filename: 'grade-calculator.js'
+    filename: 'grade-calculator.min.js'
   },
   entry: {
     app: `./${conf.path.src('index')}`,
-    vendor: Object.keys(pkg.dependencies)
+    // vendor: Object.keys(pkg.dependencies)
   }
 };
